@@ -47,7 +47,7 @@ Combine a config with an endpoint role to produce a fully configured endpoint. T
 
 This endpoint type will be the base of the utility_server object that will keep track of the state of the server. Within the `utility_server` constructor several things happen:
 
-First, we adjust the endpoint logging behavior to include all error logging channels and all access logging channels except the frame payload, which is particularly noisy and generally useful only for debugging. [TODO: link to more information about logging]
+First, we adjust the endpoint logging behavior to include all error logging channels and all access logging channels except the frame payload, which is particularly noisy and generally useful only for debugging. [more about logging](https://docs.websocketpp.org/reference_8logging.html)
 
 ~~~{.cpp}
 m_endpoint.set_error_channels(websocketpp::log::elevel::all);
