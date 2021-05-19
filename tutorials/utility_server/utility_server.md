@@ -56,7 +56,7 @@ m_endpoint.set_access_channels(websocketpp::log::alevel::all ^ websocketpp::log:
 
 Next, we initialize the transport system underlying the endpoint. This method is specific to the Asio transport not WebSocket++ core. It will not be necessary or present in endpoints that use a non-asio config.
 
-> **Note:** This example uses an internal Asio `io_service` that is managed by the endpoint itself. This is a simple arrangement suitable for programs where WebSocket++ is the only code using Asio. If you have an existing program that already manages an `io_service` object or want to build a new program where WebSocket++ handlers share an io_service with other handlers you can pass the `io_service` you want WebSocket++ to register its handlers on to the `init_asio()` method and it will use it instead of generating and managing its own. [TODO: FAQ link instead?]
+> **Note:** This example uses an internal Asio `io_service` that is managed by the endpoint itself. This is a simple arrangement suitable for programs where WebSocket++ is the only code using Asio. If you have an existing program that already manages an `io_service` object or want to build a new program where WebSocket++ handlers share an io_service with other handlers you can pass the `io_service` you want WebSocket++ to register its handlers on to the `init_asio()` method and it will use it instead of generating and managing its own. [see FAQ for more info](https://docs.websocketpp.org/faq.html)
 
 ~~~{.cpp}
 m_endpoint.init_asio();
