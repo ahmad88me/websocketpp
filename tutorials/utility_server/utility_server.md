@@ -152,7 +152,7 @@ _Set up a message handler to echo all replies back to the original user_
 >
 > All handlers take one argument, a callable type that can be converted to a `std::function` with the correct count and type of arguments. You can pass free functions, functors, and Lambdas with matching argument lists as handlers. In addition, you can use `std::bind` (or `boost::bind`) to register functions with non-matching argument lists. This is useful for passing additional parameters not present in the handler signature or member functions that need to carry a 'this' pointer.
 >
-> The function signature of each handler can be looked up in the list above in the manual. In general, all handlers include the `connection_hdl` identifying which connection this even is associated with as the first parameter. Some handlers (such as the message handler) include additional parameters. Most handlers have a void return value but some (`validate`, `ping`, `tls_init`) do not. The specific meanings of the return values are documented in the handler list linked above.
+> The function signature of each handler can be looked up in the list above in the manual. In general, all handlers include the `connection_hdl` identifying which connection this event is associated with as the first parameter. Some handlers (such as the message handler) include additional parameters. Most handlers have a void return value but some (`validate`, `ping`, `tls_init`) do not. The specific meanings of the return values are documented in the handler list linked above.
 
 
 ### Step 3
