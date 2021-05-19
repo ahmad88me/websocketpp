@@ -243,7 +243,7 @@ A new WebSocket connection is initiated via a three step process. First, a conne
 > ##### Terminology `connection_hdl`
 > Because of the limited thread safety of the `connection_ptr` the library also provides a more flexible connection identifier, the `connection_hdl`. The `connection_hdl` has type `websocketpp::connection_hdl` and it is defined in `<websocketpp/common/connection_hdl.hpp>`. Note that unlike `connection_ptr` this is not dependent on the type or config of the endpoint. Code that simply stores or transmits `connection_hdl` but does not use them can include only the header above and can treat its hdls like values.
 >
-> Connection handles are not used directly. They are used by endpoint methods to identify the target of the desired action. For example, the endpoint method that sends a new message will take as a parameter the hdl of the connection to send the message to.
+> Connection handles are not used directly. They are used by endpoint methods to identify the target of the desired action. For example, the endpoint method that sends a new message will take as a parameter the hdl of the connection to send the message.
 >
 > **When is it safe to use `connection_hdl`?**
 > `connection_hdl`s may be used at any time from any thread. They may be copied and stored in containers. Deleting a hdl will not affect the connection in any way. Handles may be upgraded to a `connection_ptr` during a handler call by using `endpoint::get_con_from_hdl()`. The resulting `connection_ptr` is safe to use for the duration of that handler invocation.
